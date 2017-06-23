@@ -1,22 +1,10 @@
-
-<div id="category">
-  <h1><%=page.category%></h1>
-  <% page.posts.each(function(article) { %>
-    <div class="category-item">
-      <% if (article.link) { %>
-        <a href="<%=url_for(article.link)%>" target="_blank">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } else { %>
-        <a href="<%=url_for(article.path)%>">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } %>
-      <time datetime="<%=date_xml(article.date)%>">
-        <%=date(article.date)%>
-      </time>
-    </div>
-  <% }); %>
+<div class="archive-label">
+  <span class="archive-label-txt"><%- page.category %></span>
+  <span>的文章</span>
 </div>
-
-<%-partial('partials/pagination')%>
+<% page.posts.each(function(post){ %>
+  <%- partial('_partial/article', {post: post}) %>
+<% }) %>
+<div id="page-list">
+  <%- paginator({prev_text: __('Prev'), next_text: __('Next')}) %>
+</div>

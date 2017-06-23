@@ -5,9 +5,9 @@ language: en
 # main menu navigation
 menu:
   Home: /
-  About: /about
-  Contact: /contact
   Archives: /archives
+  About: /about
+rss:
 
 # Miscelaneous
 favicon: /favicon.ico
@@ -15,7 +15,29 @@ favicon: /favicon.ico
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/Ani.css
+- /css/github-markdown.css
+- /css/hljs-github.min.css
+- /css/pilcrow.css
 
 # scripts loaded in the end of the body
 scripts:
 - /js/Ani.js
+- /js/jquery-3.2.1.min.js
+
+# toolbar setting
+toolbar: right
+category_show_count: true
+tag_show_count: true
+archive_show_count: true
+
+# toolbar-widgets
+widgets:
+- search
+- recent_posts
+- category
+- tag
+- archive
+- tagcloud
+
+# totop
+totop: true

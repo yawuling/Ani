@@ -1,7 +1,10 @@
-
-<article id="post">
-  <h1><%=page.title%></h1>
-  <%-page.content%>
-</article>
-
-<%-partial('partials/pagination')%>
+<div class="post-header">
+  <div class="post-title"><%= page.title %></div>
+  <div class="post-meta">
+    <div class="post-date">
+      <i class="iconfont icon-riqi"></i>
+      <span><%- date(page.date, 'YYYY-MM-DD') %></span>
+    </div>
+  </div>
+</div>
+<article class="markdown-body"><%- markdown(page.content) %></article>

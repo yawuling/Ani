@@ -1,3 +1,6 @@
-
-<%-partial('partials/recent-posts')%>
-<%-partial('partials/pagination')%>
+<% page.posts.each(function(post){ %>
+  <%- partial('_partial/article', {post: post}) %>
+<% }) %>
+<div id="page-list">
+  <%- paginator({prev_text: __('Prev'), next_text: __('Next')}) %>
+</div>

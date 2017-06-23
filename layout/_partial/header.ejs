@@ -1,0 +1,22 @@
+<header id="header">
+  <nav class="header-nav">
+    <% for (var i in theme.menu) { %>
+      <a class="nav-item js-transition-hover" href="<%- url_for(theme.menu[i]) %>">
+        <span><%= __(i) %></span>
+        <i class="nav-item-bottom js-transition-bottom"></i>
+      </a>
+    <% } %>
+    <% if (theme.rss) { %>
+      <a class="nav-item" href="<%- theme.rss %>">
+        <span><%= __('Rss') %></span>
+        <i class="nav-item-bottom"></i>
+      </a>
+    <% } %>
+  </nav>
+  <div class="header-desc">
+    <h1 class="author"><%= config.title %></h1>
+    <% if (config.subtitle) { %>
+      <h2 class="author-subtitle"><%= config.subtitle %></h2>
+    <% } %>
+  </div>
+</header>

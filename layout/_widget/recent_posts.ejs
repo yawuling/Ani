@@ -1,0 +1,15 @@
+<% if (site.posts.length){ %>
+  <div class="widget-item">
+    <h3 class="widget-title">
+      <i class="iconfont icon-wenzhang"></i>
+      <span><%= __('recent_posts') %></span>
+    </h3>
+    <ul class="widget">
+      <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+        <li>
+          <a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+<% } %>

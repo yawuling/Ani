@@ -1,0 +1,46 @@
+<div class="post">
+  <% if (post.title) { %>
+    <h2 class="post-title">
+      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+    </h2>
+  <% } %>
+  <div class="post-meta">
+    <div class="post-date">
+      <i class="iconfont icon-riqi"></i>
+      <span><%- date(post.date, 'YYYY-MM-DD') %></span>
+    </div>
+    <% if (post.categories && post.categories.length) { %>
+      <span class="post-meta-line">|</span>
+      <div class="post-category">
+        <% for (var i = 0; i < post.categories.length; i++) { %>
+          <div class="post-category-item">
+            <i class="iconfont icon-fenlei"></i>
+            <a href="<%- url_for(post.categories.data[i].path) %>"><%= post.categories.data[i].name %></a>
+          </div>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+  <div class="post-content">
+    <% if (post.excerpt) { %>
+      <%- post.excerpt %>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
+  </div>
+  <div class="post-footer">
+    <% if (post.tags && post.tags.length){ %>
+      <div class="post-tags">
+        <% for (var i = 0; i < post.tags.length; i++) { %>
+          <div class="post-tags-item">
+            <i class="iconfont icon-msnui-tag"></i>
+            <a href="<%- url_for(post.tags.data[i].path) %>"><%= post.tags.data[i].name %></a>
+          </div>
+        <% } %>
+      </div>
+    <% } %>
+    <div class="post-readmore">
+      <a href="<%- url_for(post.path) %>"><%= __('readmore') %></a>
+    </div>
+  </div>
+</div>
