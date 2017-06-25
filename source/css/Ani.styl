@@ -24,6 +24,7 @@ body
   justify-content: center;
   overflow: hidden;
   z-index: -100;
+  background-color: #293952;
 
 #container
   position: relative;
@@ -32,6 +33,8 @@ body
   margin: 0 auto;
   box-sizing: border-box;
 
+  .hide
+    display: none;
   .no-tool-bar
     width: 100%;
     padding: 0;
@@ -117,6 +120,15 @@ nav-transform()
     align-items: center;
     margin-bottom: 20px;
     color: #999;
+  .post-meta-c
+    flex: flex;
+    margin-bottom: 20px;
+    color: #999;
+    justify-content: space-between;
+    align-items: center;
+    .post-meta-l
+      flex: flex;
+      align-items: center;
   .post-date
     font-size: 0;
 
@@ -211,6 +223,96 @@ nav-transform()
     .archive-label-txt
       color: theme-color;
       font-size: 22px;
+#post
+  .post-header
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+
+    .post-title
+      padding: 0 40px;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 40px;
+    .post-meta
+      margin-bottom: 0;
+  .post-footer
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+
+    .footer-post-tags
+      margin-bottom: 30px;
+    .copyright-desc
+      text-align: center;
+      margin-bottom: 30px;
+
+      div
+        margin-bottom: 10px;
+      a
+        color: #666;
+        text-decoration: none;
+        nav-transition: all .3s;
+
+        &:hover
+          color: theme-color
+    .article-tip
+      text-align: center;
+      margin-bottom: 30px;
+      color: #999;
+
+      .tip-btn
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+        line-height: 60px;
+        background-color: theme-color;
+        color: #fff;
+        font-size: 24px;
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        nav-transform: scale(1, 1);
+        nav-transition: all .3s;
+
+        &:hover
+          nav-transform: scale(1.2, 1.2);
+    .tip-method
+      width: 100%;
+      margin: 0 auto;
+      font-size: 0;
+
+      .tip-method-item
+        display: inline-block;
+        vertical-align: bottom;
+        padding: 20px;
+
+        div
+          font-size: 12px;
+          color: #666;
+          margin-top: 10px;
+      img
+        width: 180px;
+    .near-article
+      flex: flex;
+      justify-content: space-between;
+
+      .near-article-item
+        color: #666;
+        text-decoration: none;
+        nav-transition: all .3s;
+
+        &:hover
+          color: theme-color;
+    .pinglun-tips
+      margin-top: 40px;
+      color: #999;
+      font-size: 12px;
+    .bdsharebuttonbox
+      margin-top: 20px;
+
+
 
 
 #toolbar
@@ -265,10 +367,87 @@ nav-transform()
       top: 5px;
       font-size: 24px;
       color: #666;
-      cursor: pointer;
+  #search-mask
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  #search-result
+    position: absolute;
+    width: 140%;
+    right: -20px;
+    top: 42px;
+    padding: 20px;
+    border: 1px solid theme-color;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 4px 4px 6px #ccc;
+
+    &:before
+      content: '';
+      position: absolute;
+      display: inline-block;
+      border-width: 0 12px 12px 12px;
+      border-style: solid;
+      border-color: theme-color transparent;
+      left: 40%;
+      top: -12px;
+    &:after
+      content: '';
+      position: absolute;
+      display: inline-block;
+      border-width: 0 12px 12px 12px;
+      border-style: solid;
+      border-color: #fff transparent;
+      left: 40%;
+      top: -11px;
+  .search-result-content
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 20px;
+    margin-right: -20px;
+
+    .tips
+      flex: flex;
+      padding: 20px 0;
+      color: #999;
+      align-items: center;
+      justify-content: center;
+
+      .iconfont
+        margin-right: 10px;
+        font-size: 32px;
+  .search-result-item
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc;
+
+    &:last-child
+      border-bottom: none;
+    &:first-child
+      padding-top: 0;
+    a
+      color: #666;
+      text-decoration: none;
+      nav-transition: all .3s;
 
       &:hover
         color: theme-color;
+    .item-title
+      margin-bottom: 4px;
+    .item-date
+      margin-bottom: 4px;
+      text-align: right;
+      font-size: 12px;
+    .tags div
+      display: inline-block;
+      margin-right: 4px;
+      font-size: 12px;
+
+      &:last-child
+        margin-right: 0;
+
+
   .widget-title
     margin-top: 0;
     margin-bottom: 10px;
@@ -304,6 +483,8 @@ nav-transform()
   text-align: center;
   font-size: 12px;
 
+  .footer-count
+    margin-bottom: 10px;
   .footer-info
     p
       display: inline-block;
@@ -378,3 +559,22 @@ nav-transform()
   #to-top
     .to-top-content
       display: none;
+  #toolbar
+    .search-block #search-result
+      width: 100%;
+      right: 0;
+      box-sizing: border-box;
+
+      &:before
+      &:after
+        left: 20px;
+    .widget-item
+      margin-bottom: 20px;
+  #post
+    .post-header .post-title
+      font-size: 18px;
+    .post-footer .near-article
+      display: block;
+      a
+        display: block;
+        margin-bottom: 10px;

@@ -1,8 +1,23 @@
 <div class="widget-item">
+  <div id="search-mask" class="hide"></div>
   <div class="search-block js-transition-click">
-    <input class="search-input" type="text" placeholder="搜索文章">
+    <input class="search-input" id="search-key" type="text" placeholder="搜索文章">
     <span id="search-btn" class="iconfont icon-sousuo_sousuo"></span>
     <i class="search-bottom"></i>
     <i class="search-transition-line js-transition-bottom"></i>
+    <div id="search-result" class="hide">
+      <div class="search-result-content"></div>
+    </div>
+    <div class="hide">
+      <template id="search-tpl">
+        <div class="search-result-item">
+          <a href="/{{path}}" title="{{title}}">
+            <div class="item-title">{{title}}</div>
+            <div class="item-date">{{date}}</div>
+            <div class="tags">{{tags}}</div>
+          </a>
+        </div>
+      </template>
+    </div>
   </div>
 </div>

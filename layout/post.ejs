@@ -1,10 +1,110 @@
-<div class="post-header">
-  <div class="post-title"><%= page.title %></div>
-  <div class="post-meta">
-    <div class="post-date">
-      <i class="iconfont icon-riqi"></i>
-      <span><%- date(page.date, 'YYYY-MM-DD') %></span>
+<div id="post">
+  <div class="post-header">
+    <div class="post-title"><%= page.title %></div>
+    <div class="post-meta-c">
+      <div class="post-meta-l">
+        <div class="post-date">
+          <i class="iconfont icon-riqi"></i>
+          <span><%- date(page.date, 'YYYY-MM-DD') %></span>
+        </div>
+        <% if (page.categories && page.categories.length) { %>
+          <span class="post-meta-line">|</span>
+          <div class="post-category">
+            <% for (var i = 0; i < page.categories.length; i++) { %>
+              <div class="post-category-item">
+                <i class="iconfont icon-fenlei"></i>
+                <a href="<%- url_for(page.categories.data[i].path) %>"><%= page.categories.data[i].name %></a>
+              </div>
+            <% } %>
+          </div>
+        <% } %>
+      </div>
+      <% if (theme.busuanzi) { %>
+        <div>
+          <i class="iconfont icon-yuedu"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </div>
+      <% } %>
     </div>
   </div>
+  <div class="markdown-body">
+    <%- page.content %>
+  </div>
+  <div class="post-footer">
+    <% if (page.tags && page.tags.length){ %>
+      <div class="footer-post-tags">
+        <% for (var i = 0; i < page.tags.length; i++) { %>
+          <div class="post-tags-item">
+            <i class="iconfont icon-msnui-tag"></i>
+            <a href="<%- url_for(page.tags.data[i].path) %>"><%= page.tags.data[i].name %></a>
+          </div>
+        <% } %>
+      </div>
+    <% } %>
+    <% if (theme.copyright) { %>
+      <%- partial('_partial/copyright', null, {cache: !config.relative_link}) %>
+    <% } %>
+    <% if (theme.tip) { %>
+      <%- partial('_partial/tip', null, {cache: !config.relative_link}) %>
+    <% } %>
+    <div class="near-article">
+      <% if (page.prev) { %>
+        <a href="<%- url_for(page.prev.path) %>" class="near-article-item">
+          上一篇：<%= page.prev.title %>
+        </a>
+      <% } %>
+      <% if (page.next) { %>
+        <a href="<%- url_for(page.next.path) %>" class="near-article-item">
+          下一篇：<%= page.next.title %>
+        </a>
+      <% } %>
+    </div>
+    <% if (theme.share) { %>
+      <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a>
+        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+        <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+        <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+      </div>
+      <script>
+        window._bd_share_config = {
+          'common': {
+            'bdText': '',
+            'bdDesc': '<%- strip_html(page.excerpt) %>',
+            'bdUrl': '<%= page.permalink %>',
+            'bdMini': '2',
+            'bdMiniList': false,
+            'bdStyle': '1',
+            'bdSize': '16'
+          },
+          'share': {}
+        };
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+      </script>
+    <% } %>
+    <% if (theme.wy_productKey) { %>
+      <div class="pinglun-tips">tips：网易评论修改昵称和头像请下载手机app网易新闻</div>
+    <% } %>
+  </div>
+  <% if (theme.wy_productKey) { %>
+    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href,
+        sourceId: "",
+        productKey: "<%- theme.wy_productKey %>",
+        target: "cloud-tie-wrapper"
+      };
+      var yunManualLoad = true;
+      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+    </script>
+  <% } %>
 </div>
-<article class="markdown-body"><%- markdown(page.content) %></article>

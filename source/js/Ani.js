@@ -19,3 +19,7 @@ $(window).scroll(function(){
     $('#to-top').show();
   }
 });
+$('#tip-btn').on('click', function () {
+  var tipBlock = $(this).next('.tip-method');
+  tipBlock.slideToggle();
+});

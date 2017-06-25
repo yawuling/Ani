@@ -1,6 +1,6 @@
 
 # html lang
-language: en
+language:
 
 # main menu navigation
 menu:
@@ -11,18 +11,21 @@ rss:
 
 # Miscelaneous
 favicon: /favicon.ico
+wepay: /image/wepay.JPG
+alipay: /image/alipay.JPG
+bg: /image/bg.jpg
 
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/Ani.css
 - /css/github-markdown.css
-- /css/hljs-github.min.css
-- /css/pilcrow.css
+- /css/highlight.css
 
 # scripts loaded in the end of the body
 scripts:
 - /js/Ani.js
 - /js/jquery-3.2.1.min.js
+- /js/search.js
 
 # toolbar setting
 toolbar: right
@@ -39,5 +42,19 @@ widgets:
 - archive
 - tagcloud
 
+# post setting
+copyright: true
+tip: true
+
 # totop
 totop: true
+
+# 插件设置
+# 百度统计
+baidu_analytics: d07bed116b18b9fa55ad47db97b8c8d0
+# 不蒜子
+busuanzi: true
+# 网易云跟帖评论
+wy_productKey: d43d15ba9004441ab4775eb8f1ba0f35
+# 百度分享服务
+share: true

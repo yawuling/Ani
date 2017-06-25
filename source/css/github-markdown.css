@@ -436,24 +436,24 @@
   border: 0;
 }
 
-.markdown-body .highlight {
+/*.markdown-body .highlight {
   margin-bottom: 16px;
-}
+}*/
 
-.markdown-body .highlight pre,
+/*.markdown-body .highlight pre,*/
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f7f7f7;
+  /*background-color: #f7f7f7;*/
   border-radius: 3px;
 }
 
-.markdown-body .highlight pre {
+/*.markdown-body .highlight pre {
   margin-bottom: 0;
   word-break: normal;
-}
+}*/
 
 .markdown-body pre {
   word-wrap: normal;
@@ -476,11 +476,11 @@
   content: normal;
 }
 
-.markdown-body .highlight {
+/*.markdown-body .highlight {
   background: #fff;
-}
+}*/
 
-.markdown-body .highlight .mf,
+/*.markdown-body .highlight .mf,
 .markdown-body .highlight .mh,
 .markdown-body .highlight .mi,
 .markdown-body .highlight .mo,
@@ -662,7 +662,7 @@
 .markdown-body .highlight .gc {
   color: #999;
   background-color: #EAF2F5;
-}
+}*/
 
 .markdown-body .octicon {
   font: normal normal 16px octicons-anchor;

@@ -31,8 +31,19 @@
     <% if (config.highlight.enable){ %>
       <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css" >
     <% } %>
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_mw1ay96hrw45cdi.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_350yjxn0ozbprpb9.css">
     <%- css('css/Ani') %>
     <%- css('css/github-markdown') %>
-    <%- css('css/hljs-github.min') %>
+    <%- css('css/highlight') %>
+    <% if (theme.baidu_analytics) { %>
+      <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?<%- theme.baidu_analytics %>";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    <% } %>
   </head>
