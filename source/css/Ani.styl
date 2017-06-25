@@ -16,6 +16,7 @@ body
   font-size: 14px;
   color: #333;
   background: #fbfbfb;
+  font-family: '微软雅黑',tahoma,arial,'Hiragino Sans GB',"宋体",sans-serif;
 #bg
   position: absolute;
   flex: flex;
@@ -188,9 +189,8 @@ nav-transform()
       transition: all .3s;
 
       &:hover
-        background-color: theme-color;
         border: 1px solid theme-color;
-        color: #fff;
+        color: theme-color;
   #page-list
     margin-top: 50px;
     text-align: center;
@@ -209,7 +209,8 @@ nav-transform()
       transition: all .5s;
 
       &:hover
-        border: 1px solid #666;
+        border: 1px solid theme-color;
+        color: theme-color;
     .prev
     .next
       width: 70px;
