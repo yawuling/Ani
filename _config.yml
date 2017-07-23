@@ -24,14 +24,14 @@ about:
   photo: /image/person.jpg
   items:
     - label: name
-      title: #姓名
+      title: 钟志杰
     - label: nickname
-      title: #昵称
+      title: 涯无凌
     - label: E-mail
-      title: #email
+      title: zhijie_csu@163.com
     - label: Github
-      title: #github名称
-      url: #github地址
+      title: https://github.com/yawuling
+      url: https://github.com/yawuling
 
 # 网站icon设置，网站顶部背景图
 favicon: /favicon.ico

@@ -95,7 +95,7 @@
   </div>
   <% if (theme.changyan.appId) { %>
     <!--PC和WAP自适应版-->
-    <div id="SOHUCS" sid="<%= url_for(page.path) %>" ></div> 
+    <div id="SOHUCS" sid="<%= page.path %>" ></div> 
     <script type="text/javascript"> 
     (function(){ 
     var appid = '<%= theme.changyan.appId %>';
