@@ -1,6 +1,8 @@
 <% page.posts.each(function(post){ %>
   <%- partial('_partial/article', {post: post}) %>
 <% }) %>
-<div id="page-list">
-  <%- paginator({prev_text: __('Prev'), next_text: __('Next')}) %>
-</div>
+<% if (page.total > 1) { %>
+  <div id="page-list">
+    <%- paginator({prev_text: __('Prev'), next_text: __('Next')}) %>
+  </div>
+<% } %>

@@ -1,4 +1,12 @@
-$('.js-transition-hover').hover(function(){
+var toolbarTop = $('#toolbar').scrollTop(),
+  toolbarHeight = $('#toolbar').height();
+$(document).ready(function () {
+  $('.markdown-body img').each(function () {
+    $(this).wrap('<a href="' + this.src + '" data-fancybox="group"></a>')
+  });
+  $("[data-fancybox]").fancybox();
+});
+$('.js-transition-hover').hover(function () {
   $(this).find('.js-transition-bottom').addClass('focus');
 }, function(){
   $(this).find('.js-transition-bottom').removeClass('focus');
@@ -12,11 +20,16 @@ $('.search-input').blur(function(){
 $('#to-top').click(function(){
   $('html, body').animate({scrollTop:0}, 'slow');
 });
-$(window).scroll(function(){
+$(window).scroll(function () {
   if ($(window).scrollTop() <= 20) {
     $('#to-top').hide();
   } else {
     $('#to-top').show();
+  }
+  if ($(window).scrollTop() > (toolbarTop + toolbarHeight)) {
+    $('#post-toc').addClass('fixed');
+  } else {
+    $('#post-toc').removeClass('fixed');
   }
 });
 $('#tip-btn').on('click', function () {

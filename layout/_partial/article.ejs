@@ -21,14 +21,14 @@
       </div>
     <% } %>
   </div>
-  <div class="post-content">
+  <div class="post-article-content">
     <% if (post.excerpt) { %>
       <%- post.excerpt %>
     <% } else { %>
       <%- post.content %>
     <% } %>
   </div>
-  <div class="post-footer">
+  <div class="post-article-footer">
     <% if (post.tags && post.tags.length){ %>
       <div class="post-tags">
         <% for (var i = 0; i < post.tags.length; i++) { %>

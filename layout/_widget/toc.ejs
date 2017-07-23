@@ -1,0 +1,11 @@
+<% if (is_post() && page.toc){ %>
+  <div class="widget-item" id="post-toc">
+    <h3 class="widget-title">
+      <i class="iconfont icon-mulu"></i>
+      <span><%= __('toc') %></span>
+    </h3>
+    <div class="widget post-toc">
+      <%- toc(page.content, { list_number: false }) %>
+    </div>
+  </div>
+<% } %>

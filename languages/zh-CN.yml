@@ -7,9 +7,9 @@ Prev: 上一页
 Next: 下一页
 comment: 留言
 archive_a: 归档
-archive_b: 归档：%s
 page: 第 %d 页
 recent_posts: 最新文章
+toc: 目录
 newer: Newer
 older: Older
 share: 分享
@@ -22,3 +22,7 @@ Archives: 归档
 About: 关于
 Rss: 订阅
 readmore: 阅读更多
+name: 姓名
+nickname: 昵称
+E-mail: 邮箱
+Github: Github

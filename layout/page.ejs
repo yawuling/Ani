@@ -1,1 +1,21 @@
-<%- partial('_partial/article', {post: page}) %>
+<div id="about">
+  <div class="about-block">
+    <img src="<%= theme.about.photo %>" alt="博主zhaop" class="about-photo">
+    <div class="about-info">
+      <% theme.about.items.forEach(function (item){ %>
+        <div class="about-info-item">
+          <div class="about-info-item-label"><%= __(item.label) %>: </div>
+          <div class="about-info-item-txt">
+            <% if (item.url) { %>
+              <a href="<%= item.url %>" class="about-href" target="_blank">
+                <%= item.title %>
+              </a>
+            <% } else { %>
+              <%= item.title %>
+            <% } %>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>

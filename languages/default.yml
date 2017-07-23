@@ -3,13 +3,13 @@ search: Search
 tags: Tags
 tagcloud: Tag Cloud
 tweets: Tweets
-prev: Prev
-next: Next
+Prev: Prev
+Next: Next
 comment: Comments
 archive_a: Archives
-archive_b: "Archives: %s"
 page: Page %d
 recent_posts: Recent Posts
+toc: Toc
 newer: Newer
 older: Older
 share: Share
@@ -17,3 +17,12 @@ powered_by: Powered by
 rss_feed: RSS Feed
 category: Category
 tag: Tag
+Home: Home
+Archives: Archives
+About: About
+Rss: Rss
+readmore: Readmore
+name: Name
+nickname: Nickname
+E-mail: E-mail
+Github: Github

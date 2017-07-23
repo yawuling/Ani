@@ -3,17 +3,26 @@ search: 搜尋
 tags: 標籤
 tagcloud: 標籤雲
 tweets: 推文
-prev: 上一頁
-next: 下一頁
+Prev: 上一頁
+Next: 下一頁
 comment: 留言
 archive_a: 彙整
-archive_b: 彙整：%s
 page: 第 %d 頁
 recent_posts: 最新文章
+toc: 目錄
 newer: Newer
 older: Older
-share: Share
+share: 分享
 powered_by: Powered by
 rss_feed: RSS Feed
 category: Category
 tag: Tag
+Home: 首頁
+Archives: 彙整
+About: 關於
+Rss: 訂閱
+readmore: 閱讀更多
+name: 姓名
+nickname: 暱稱
+E-mail: 郵箱
+Github: Github

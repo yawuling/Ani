@@ -1,12 +1,31 @@
-<% if (page.year) { %>
-  <div class="archive-label">
-    <span class="archive-label-txt"><%- page.year %>年 <%- page.month %>月</span>
-    <span>的文章</span>
-  </div>
+<% if (is_month()) { %>
+  <div class="archive-date"><h3><%= page.year %>年<%= page.month %>月</h3></div>
+  <% page.posts.each(function(post){ %>
+    <div class="archive-item">
+      <div class="archive-item-date"><%- date(post.date, 'MM-DD') %></div>
+      <div class="archive-item-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </div>
+    </div>
+  <% }) %>
+<% } else { %>
+  <% var last; %>
+  <% page.posts.each(function(post){ %>
+    <% var year = post.date.year(); %>
+    <% if (last != year) { %>
+      <% last = year %>
+      <div class="archive-date"><h3><%= last %></h3></div>
+    <% } %>
+    <div class="archive-item">
+      <div class="archive-item-date"><%- date(post.date, 'MM-DD') %></div>
+      <div class="archive-item-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </div>
+    </div>
+  <% }) %>
 <% } %>
-<% page.posts.each(function(post){ %>
-  <%- partial('_partial/article', {post: post}) %>
-<% }) %>
-<div id="page-list">
-  <%- paginator({prev_text: __('Prev'), next_text: __('Next')}) %>
-</div>
+<% if (page.total > 1) { %>
+  <div id="page-list">
+    <%- paginator({prev_text: __('Prev'), next_text: __('Next')}) %>
+  </div> 
+<% } %>

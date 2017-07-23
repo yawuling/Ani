@@ -17,6 +17,9 @@ body
   color: #333;
   background: #fbfbfb;
   font-family: '微软雅黑',tahoma,arial,'Hiragino Sans GB',"宋体",sans-serif;
+.fixed
+  position: fixed;
+  top: 20px;
 #bg
   position: absolute;
   flex: flex;
@@ -51,6 +54,18 @@ body
 #header
   min-height: 248px;
   color: #fff;
+.header-site
+  position: absolute;
+  left: 50px;
+  margin: 16px 0;
+
+  .header-site-item
+    padding: 10px 18px;
+    color: #fff;
+    text-decoration: none;
+
+    .iconfont
+      font-size: 28px;
 .header-nav
   position: absolute;
   margin: 20px 0;
@@ -102,7 +117,7 @@ nav-transform()
   vertical-align: top;
 
   .post
-    padding: 30px 10px 30px 10px;
+    padding: 30px 10px;
     border-bottom: 1px solid #ccc;
   .post-title
     margin-top: 0;
@@ -153,7 +168,7 @@ nav-transform()
   .post-meta-line
     margin: 0 6px;
     font-size: 18px;
-  .post-footer
+  .post-article-footer
     margin-top: 20px;
     overflow: auto;
   .post-tags
@@ -217,13 +232,26 @@ nav-transform()
     span
       padding: 4px;
       margin: 0 6px;
-  .archive-label
-    font-size: 18px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #ccc;
-    .archive-label-txt
-      color: theme-color;
-      font-size: 22px;
+  .archive-date
+    font-size: 20px;
+    color: #555;
+  .archive-item
+    display: flex;
+    margin: 10px 0 10px 60px;
+    
+    .archive-item-date
+      width: 120px;
+      flex-shrink: 0;
+      color: #999;
+    .archive-item-title
+      flex-grow: 1;
+      
+      a
+        color: #777;
+        text-decoration: none;
+        transition: .3s;
+        &:hover
+          color: theme-color;
 #post
   .post-header
     padding-bottom: 10px;
@@ -247,11 +275,12 @@ nav-transform()
     .copyright-desc
       text-align: center;
       margin-bottom: 30px;
+      color: #999;
 
       div
         margin-bottom: 10px;
       a
-        color: #666;
+        color: #999;
         text-decoration: none;
         nav-transition: all .3s;
 
@@ -314,7 +343,10 @@ nav-transform()
       flex: flex;
       margin-top: 30px;
       align-items: center;
-
+.markdown-body
+  img
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
 
 
 
@@ -479,6 +511,15 @@ nav-transform()
         content: '（'
       &:after
         content: '）'
+  .post-toc
+    background: #fbfbfb;
+    .toc
+      margin: 0;
+      padding: 0;
+
+      a
+        &:visited
+          color: #aaa;
   .tagcloud a
     margin-right: 10px;
 #footer
@@ -535,18 +576,74 @@ nav-transform()
       z-index: -100;
     .focus
       nav-transform: scale(1, 1);
+#about
+  .about-block
+    vender(display, flex);
+    width: 500px;
+    align-items: center;
+    margin: 40px auto;
 
+    .about-photo
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    .about-info
+      flex-grow: 1;
+      margin-left: 50px;
 
+      .about-info-item
+        vender(display, flex);
+        margin-bottom: 14px;
+
+        .about-info-item-label
+          width: 80px;
+          flex-shrink: 0;
+        .about-info-item-txt
+          flex-grow: 1;
+        .about-href
+          color: #666;
+          vender(transition, all .3s);
+
+          &:hover
+            color: theme-color;
+
+@media screen and (max-width: 900px)
+
+  #about
+    .about-block
+      display: block;
+      width: auto;
+      .about-photo
+        display: block;
+        margin: 0 auto;
+      .about-info
+        margin-left: 0;
+        margin-top: 30px;
 @media screen and (max-width: 700px)
+
+  .header-site
+    left: 20px;
+    
+    .header-site-item
+      padding: 10px;
+  .header-nav
+    right: 20px;
+  .nav-item
+    padding: 10px 14px;
   #main
     width: 100%;
     padding-right: 0;
     border-right: none;
 
+    .post
+      padding: 10px;
     #page-list
       .page-number
       .space
         display: none;
+    .archive-item
+      margin: 10px 0;
   #container
     padding: 0 20px;
 
@@ -573,6 +670,8 @@ nav-transform()
         left: 20px;
     .widget-item
       margin-bottom: 20px;
+    #post-toc
+      display: none;
   #post
     .post-header .post-title
       font-size: 18px;
