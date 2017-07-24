@@ -48,14 +48,14 @@
       <%- partial('_partial/tip', null, {cache: !config.relative_link}) %>
     <% } %>
     <div class="near-article">
-      <% if (page.prev) { %>
-        <a href="<%- url_for(page.prev.path) %>" class="near-article-item">
-          上一篇：<%= page.prev.title %>
-        </a>
-      <% } %>
       <% if (page.next) { %>
         <a href="<%- url_for(page.next.path) %>" class="near-article-item">
-          下一篇：<%= page.next.title %>
+          上一篇：<%= page.next.title %>
+        </a>
+      <% } %>
+      <% if (page.prev) { %>
+        <a href="<%- url_for(page.prev.path) %>" class="near-article-item">
+          下一篇：<%= page.prev.title %>
         </a>
       <% } %>
     </div>
