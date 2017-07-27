@@ -21,12 +21,14 @@ $('#to-top').click(function(){
   $('html, body').animate({scrollTop:0}, 'slow');
 });
 $(window).scroll(function () {
-  if ($(window).scrollTop() <= 20) {
+  var scrollTop = $(window).scrollTop();
+
+  if (scrollTop <= 20) {
     $('#to-top').hide();
   } else {
     $('#to-top').show();
   }
-  if ($(window).scrollTop() > (toolbarTop + toolbarHeight)) {
+  if (scrollTop > (toolbarTop + toolbarHeight)) {
     $('#post-toc').addClass('fixed');
   } else {
     $('#post-toc').removeClass('fixed');

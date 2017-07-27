@@ -12,3 +12,6 @@
     <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a> and <a href="https://github.com/" style="font-weight: bold">Github</a></p>
   </div>
 </div>
+<% if (theme.baiduPush) { %>
+  <%- partial('_partial/baiduPush', null, {cache: !config.relative_link}) %>
+<% } %>

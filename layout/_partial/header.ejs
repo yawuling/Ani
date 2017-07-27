@@ -1,34 +1,52 @@
 <header id="header">
-  <div class="header-site">
-    <% if (theme.github) { %>
-      <a class="header-site-item" href="<%= theme.github %>" title="github">
-        <i class="iconfont icon-github"></i>
-      </a>
-    <% } %>
-    <% if (theme.sina) { %>
-      <a class="header-site-item" href="<%= theme.sina %>" title="新浪微博">
-        <i class="iconfont icon-weibo"></i>
-      </a>
-    <% } %>
+  <div class="header-top">
+    <div class="header-site">
+      <% if (theme.github) { %>
+        <a class="header-site-item" href="<%= theme.github %>" title="github">
+          <i class="iconfont icon-github"></i>
+        </a>
+      <% } %>
+      <% if (theme.sina) { %>
+        <a class="header-site-item" href="<%= theme.sina %>" title="新浪微博">
+          <i class="iconfont icon-weibo"></i>
+        </a>
+      <% } %>
+    </div>
+    <nav class="header-nav">
+      <% for (var i in theme.menu) { %>
+        <a class="nav-item js-transition-hover" href="<%- url_for(theme.menu[i]) %>">
+          <span><%= __(i) %></span>
+          <i class="nav-item-bottom js-transition-bottom"></i>
+        </a>
+      <% } %>
+      <% if (theme.feed.path) { %>
+        <a class="nav-item js-transition-hover" href="<%- url_for(theme.feed.path) %>">
+          <span><%= __('Rss') %></span>
+          <i class="nav-item-bottom js-transition-bottom"></i>
+        </a>
+      <% } %>
+    </nav>
   </div>
-  <nav class="header-nav">
-    <% for (var i in theme.menu) { %>
-      <a class="nav-item js-transition-hover" href="<%- url_for(theme.menu[i]) %>">
-        <span><%= __(i) %></span>
-        <i class="nav-item-bottom js-transition-bottom"></i>
-      </a>
-    <% } %>
-    <% if (theme.feed.path) { %>
-      <a class="nav-item js-transition-hover" href="<%- url_for(theme.feed.path) %>">
-        <span><%= __('Rss') %></span>
-        <i class="nav-item-bottom js-transition-bottom"></i>
-      </a>
-    <% } %>
-  </nav>
   <div class="header-desc">
-    <h1 class="author"><%= config.title %></h1>
-    <% if (config.subtitle) { %>
-      <h2 class="author-subtitle"><%= config.subtitle %></h2>
-    <% } %>
+    <div class="header-desc-left">
+      <h1 class="author"><%= config.title %></h1>
+      <% if (config.subtitle) { %>
+        <h2 class="author-subtitle"><%= config.subtitle %></h2>
+      <% } %>
+    </div>
+    <div class="header-desc-right">
+      <div class="header-site">
+        <% if (theme.github) { %>
+          <a class="header-site-item" href="<%= theme.github %>" title="github">
+            <i class="iconfont icon-github"></i>
+          </a>
+        <% } %>
+        <% if (theme.sina) { %>
+          <a class="header-site-item" href="<%= theme.sina %>" title="新浪微博">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        <% } %>
+      </div>
+    </div>
   </div>
 </header>
