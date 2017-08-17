@@ -5,9 +5,9 @@
     <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
     <div id="content">
       <% if (theme.toolbar && theme.toolbar === 'right'){ %>
-        <section id="main">
+        <div id="main">
           <%- body %>
-        </section>
+        </div>
         <div id="toolbar">
           <%- partial('_partial/toolbar', null, {cache: !config.relative_link}) %>
         </div>
@@ -15,13 +15,13 @@
         <div id="toolbar" class="toolbar-left">
           <%- partial('_partial/toolbar', null, {cache: !config.relative_link}) %>
         </div>
-        <section id="main" class="main-right">
+        <div id="main" class="main-right">
           <%- body %>
-        </section>
+        </div>
       <% } else { %>
-        <section id="main" class="no-tool-bar">
+        <div id="main" class="no-tool-bar">
           <%- body %>
-        </section>
+        </div>
       <% } %>
     </div>
     <% if (theme.totop) { %>

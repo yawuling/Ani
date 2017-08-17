@@ -1,4 +1,4 @@
-<header id="header">
+<div id="header">
   <div class="header-top">
     <div class="header-site">
       <% if (theme.github) { %>
@@ -12,7 +12,7 @@
         </a>
       <% } %>
     </div>
-    <nav class="header-nav">
+    <div class="header-nav">
       <% for (var i in theme.menu) { %>
         <a class="nav-item js-transition-hover" href="<%- url_for(theme.menu[i]) %>">
           <span><%= __(i) %></span>
@@ -25,7 +25,7 @@
           <i class="nav-item-bottom js-transition-bottom"></i>
         </a>
       <% } %>
-    </nav>
+    </div>
   </div>
   <div class="header-desc">
     <div class="header-desc-left">
@@ -49,4 +49,4 @@
       </div>
     </div>
   </div>
-</header>
+</div>
