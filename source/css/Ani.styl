@@ -17,6 +17,18 @@ body
   color: #333;
   background: #fbfbfb;
   font-family: '微软雅黑',tahoma,arial,'Hiragino Sans GB',"宋体",sans-serif;
+  overflow: auto;
+html
+  ::-webkit-scrollbar
+    width: 8px;
+    height: 4px;
+  ::-webkit-scrollbar-thumb
+    background-color: #bababa;
+    background-clip: padding-box;
+    min-height: 28px;
+    border-radius: 4px;
+  ::-webkit-scrollbar-track-piece
+    background-color: #e8e8e8;
 .fixed
   position: fixed;
   top: 20px;
@@ -525,12 +537,18 @@ nav-transform()
   .post-toc
     background: #fbfbfb;
     .toc
+      max-height: 500px;
       margin: 0;
       padding: 0;
+      overflow-y: auto;
 
       a
         &:visited
           color: #aaa;
+      ol
+        padding-left: 20px;
+  .widget-item.fixed
+    max-width: 250px;
   .tagcloud a
     margin-right: 10px;
 #footer
