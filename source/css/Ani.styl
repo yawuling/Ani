@@ -14,21 +14,12 @@ flex()
 body
   width: 100%;
   font-size: 14px;
-  color: #333;
-  background: #fbfbfb;
-  font-family: '微软雅黑',tahoma,arial,'Hiragino Sans GB',"宋体",sans-serif;
+  color: #34495e;
+  background: #fff;
+  font-family: vetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
   overflow: auto;
-html
-  ::-webkit-scrollbar
-    width: 8px;
-    height: 4px;
-  ::-webkit-scrollbar-thumb
-    background-color: #bababa;
-    background-clip: padding-box;
-    min-height: 28px;
-    border-radius: 4px;
-  ::-webkit-scrollbar-track-piece
-    background-color: #e8e8e8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 .fixed
   position: fixed;
   top: 20px;
@@ -45,7 +36,7 @@ html
 #container
   position: relative;
   max-width: 1200px;
-  padding: 0 50px;
+  padding: 0 30px;
   margin: 0 auto;
   box-sizing: border-box;
 
@@ -284,8 +275,8 @@ nav-transform()
     .post-title
       padding: 0 40px;
       text-align: center;
-      font-size: 24px;
-      margin-bottom: 40px;
+      font-size: 22px;
+      margin: 20px 0 40px;
     .post-meta
       margin-bottom: 0;
   .post-footer
@@ -318,7 +309,7 @@ nav-transform()
         display: inline-block;
         width: 60px;
         height: 60px;
-        margin-top: 10px;
+        margin-top: 30px;
         line-height: 60px;
         background-color: theme-color;
         color: #fff;
@@ -328,6 +319,7 @@ nav-transform()
         cursor: pointer;
         nav-transform: scale(1, 1);
         nav-transition: all .3s;
+        user-select: none;
 
         &:hover
           nav-transform: scale(1.2, 1.2);
@@ -367,9 +359,87 @@ nav-transform()
       margin-top: 30px;
       align-items: center;
 .markdown-body
+  line-height: 1.5;
+
   img
     cursor: -webkit-zoom-in;
     cursor: zoom-in;
+  .gutter
+    display: none;
+  figure
+    margin: 20px 0;
+    border-radius: 4px;
+    padding: 15px;
+    line-height: 1.8;
+    font-size: 12px;
+
+    pre
+      font-family: "Roboto Mono", Monaco, courier, monospace;
+  pre
+    margin: 0;
+  p
+    margin: 20px 0;
+  a
+    text-decoration: none;
+    color: lighten(theme-color, 10);
+    transition: color .3s;
+    font-weight: 700;
+    word-wrap: break-word;
+
+    &:hover
+      color: theme-color;
+  blockquote
+    padding: 5px 16px;
+    margin: 30px 0;
+    border-left: 4px solid lighten(theme-color, 10);
+    color: #666;
+
+    p
+      margin: 0;
+  ul, ol
+    padding-left: 2em;
+
+    li
+      margin: 10px 0;
+  h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0;
+    font-weight: 400;
+    color: #2b2b2b;    
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 19px;
+    margin: 60px 0 20px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+  h5 {
+    font-size: 13px;
+  }
+  h6 {
+    font-size: 12px;
+  }
+  hr {
+    height: 1px;
+    border: none;
+    background: #eee;
+  }
+  code
+    display: inline-block;
+    padding: 1px 6px;
+    margin: 0 5px;
+    line-height: 18px;
+    border-radius: 4px;
+    vertical-align: middle;
+    background: #f6f6f6;
+    color: #e84f48;
+    overflow: auto;
 
 
 
@@ -666,6 +736,11 @@ nav-transform()
     right: 20px;
   .nav-item
     padding: 10px 14px;
+  #bg
+    height: 220px;
+  #header
+    min-height: 220px;
+    overflow: hidden;
   #main
     width: 100%;
     padding-right: 0;
@@ -680,13 +755,15 @@ nav-transform()
     .archive-item
       margin: 10px 0;
   #container
-    padding: 0 20px;
+    padding: 0 10px;
 
     .main-right
       padding-left: 0;
       border-left: none;
     .toolbar-left
       display: none;
+  #content
+    padding: 20px 0;
   #toolbar
     width: 100%;
     padding-left: 0;

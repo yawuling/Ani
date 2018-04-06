@@ -43,6 +43,7 @@ stylesheets:
 - /css/github-markdown.css
 - /css/highlight.css
 - /css/jquery.fancybox.min.css
+- /css/atom-one-dark.css
 
 # scripts loaded in the end of the body
 scripts:
@@ -50,6 +51,7 @@ scripts:
 - /js/jquery-3.2.1.min.js
 - /js/search.js
 - /js/jquery.fancybox.min.js
+- /js/highlight.pack.js
 
 # toolbar setting
 toolbar: right
